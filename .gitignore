@@ -19,3 +19,9 @@ gc_env/
 
 # VS Code
 .vs
+
+# Dataset
+data
+
+Grounding-DINO-Batch-Inference/
+GroundingDINO/

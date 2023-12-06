@@ -47,14 +47,14 @@ class ParallelUnetModel128(nn.Module):
         self.person_unet = PersonUnetModel(pose_embed_dim=16, nfs=nfs, img_res=img_res, attn_chans=attn_chans)
 
     def forward(self, inp):
-        device = "cuda"
-        person_image = torch.rand(2, 6, 128, 128).to(device)
-        garment_image = torch.rand(2, 3, 128, 128).to(device)
-        pose_embed = torch.rand(2, 2, 16).to(device)
-        t = torch.rand(2).to(device)
-        t_na = torch.rand(2).to(device)
+        # device = "cuda"
+        # person_image = torch.rand(2, 6, 128, 128).to(device)
+        # garment_image = torch.rand(2, 3, 128, 128).to(device)
+        # pose_embed = torch.rand(2, 2, 16).to(device)
+        # t = torch.rand(2).to(device)
+        # t_na = torch.rand(2).to(device)
 
-        # garment_image, person_image, pose_embed, t, t_na = inp
+        garment_image, person_image, pose_embed, t, t_na = inp
         inp_garment = (garment_image, pose_embed, None, t_na)
         inp_person = (person_image, pose_embed, t, t_na)
 
